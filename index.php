@@ -32,7 +32,7 @@ $userid = $_GET['id'];
 	$password = $_POST['password'];
 	$stmt->bindParam(":userid",$userid);
 	//$stmt->bindParam(":password",$fields["password"]);
-	$stmt->bindParam(":password",$password);
+	$stmt->bindParam(":password",sha1($password));
 	        if($stmt->execute()){
 						$result = $stmt->fetch(PDO::FETCH_OBJ);
 						            $stmt->closeCursor();
