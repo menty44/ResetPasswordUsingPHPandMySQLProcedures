@@ -42,6 +42,8 @@ $userid = $_GET['id'];
 																		$response = array("status_code"=>"0000","message"=>"Success");
 																	//	$this->response(json_encode($response),200,$this->callback);
 																	echo json_encode($response) ;
+
+																	
 																	    }else{
 																				$response = array("status_code"=>$status->status,"message"=>"Please Try changing your password Again");
 																			//	$this->response(json_encode($response),200,$this->callback);
