@@ -39,25 +39,13 @@ $userid = $_GET['id'];
       <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#password2").keyup(validate);
+        $(function() {
+            $("#txtConfirmPassword").keyup(function() {
+                var password = $("#txtNewPassword").val();
+                $("#divCheckPasswordMatch").html(password == $(this).val() ? "Passwords match." : "Passwords do not match!");
+            });
+
         });
-
-
-        function validate() {
-            var password1 = $("#password1").val();
-            var password2 = $("#password2").val();
-
-
-
-            if(password1 == password2) {
-                $("#validate-status").text("valid");
-            }
-            else {
-                $("#validate-status").text("invalid");
-            }
-
-        }
         </script>
 
 
@@ -74,24 +62,25 @@ $userid = $_GET['id'];
   	<h1 class="login-heading">
       <strong>Change Password.</strong> </h1>
       <form method="post" name="frmChange" action="welcome.php/?id=<?php echo  $_GET["id"]; ?>"
-					<div class="message"><strong>
-                            <font color="dodgerblue"><?php if(isset($message)) { echo $message; } ?></font>
-                        </strong></div>
+<!--					<div class="message"><strong>
+                            <font color="dodgerblue"><?php //if(isset($message)) { echo $message; } ?><!--</font>
+                      </strong></div>
 
-					<!--<?php echo $_POST["password"]; ?>-->
+					<!--<?php echo $_POST["password"]; ?>
         <!--<input type="text" name="currentPassword" placeholder="Current Password" required="required" class="input-txt" id="currentPassword" />-->
+<!--      <p id="validate-status"></p>-->
           <input type="password" name="password" placeholder="New Password" required="required" class="input-txt" id="password1"/>
           <input type="password" name="confirmPassword" placeholder="Confirm Password" required="required" class="input-txt" id="password2" />
+
+      <div class="registrationFormAlert" id="divCheckPasswordMatch"></div>
+
+      <div class="login-footer">
+          <a href="#" class="lnk">
+
+          </a>
+          <center><button type="submit" class="btn btn--right">CHANGE  </button></center>
+
       </div>
-
-      <p id="validate-status"></p>
-          <div class="login-footer">
-<!--             <a href="#" class="lnk">-->
-<!---->
-<!--            </a>-->
-            <center><button type="submit" class="btn btn--right">CHANGE  </button></center>
-
-          </div>
       </form>
   </div>
 </div>
