@@ -38,41 +38,29 @@ $userid = $_GET['id'];
 
       <link rel="stylesheet" href="css/style.css">
 
-			<script>
-			function validatePassword() {
-				var password,confirmPassword,output = true;
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#password2").keyup(validate);
+        });
 
-				//currentPassword = document.frmChange.currentPassword;
-				password = document.frmChange.password;
-				confirmPassword = document.frmChange.confirmPassword;
 
-				// if(!currentPassword.value) {
-				// 	currentPassword.focus();
-				// 	document.getElementById("currentPassword").innerHTML = "required";
-				// 	output = false;
-				// }
-				// else
-				if(!password.value) {
-					password.focus();
-					document.getElementById("password").innerHTML = "required";
-					output = false;
-				}
-				else if(!confirmPassword.value) {
-					confirmPassword.focus();
-					document.getElementById("confirmPassword").innerHTML = "required";
-					output = false;
-				}
-				if(password.value != confirmPassword.value) {
-					password.value="";
-					confirmPassword.value="";
-					password.focus();
-					document.getElementById("confirmPassword").innerHTML = "not same";
-					output = false;
-				}
-				return output;
-				document.getElementById("demo").innerHTML = output;
-			}
-			</script>
+        function validate() {
+            var password1 = $("#password1").val();
+            var password2 = $("#password2").val();
+
+
+
+            if(password1 == password2) {
+                $("#validate-status").text("valid");
+            }
+            else {
+                $("#validate-status").text("invalid");
+            }
+
+        }
+        </script>
+
+
 
 
 </head>
@@ -85,16 +73,19 @@ $userid = $_GET['id'];
   <div class="login">
   	<h1 class="login-heading">
       <strong>Change Password.</strong> </h1>
-      <form method="post" name="frmChange" action="welcome.php/?id=<?php echo  $_GET["id"]; ?>" onSubmit="return validatePassword()">
+      <form method="post" name="frmChange" action="welcome.php/?id=<?php echo  $_GET["id"]; ?>"
 					<div class="message"><strong>
                             <font color="dodgerblue"><?php if(isset($message)) { echo $message; } ?></font>
                         </strong></div>
+
 					<!--<?php echo $_POST["password"]; ?>-->
         <!--<input type="text" name="currentPassword" placeholder="Current Password" required="required" class="input-txt" id="currentPassword" />-->
-          <input type="password" name="password" placeholder="New Password" required="required" class="input-txt" id="password"/>
-					<input type="password" name="confirmPassword" placeholder="Confirm Password" required="required" class="input-txt" id="confirmPassword"/>
+          <input type="password" name="password" placeholder="New Password" required="required" class="input-txt" id="txtNewPassword"/>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" required="required" class="input-txt" id="txtConfirmPassword" onkeyup="checkPasswordMatch();>
+      </div>/>
 
-
+      <div id="divCheckPasswordMatch">
+      </div>
           <div class="login-footer">
              <a href="#" class="lnk">
 
@@ -105,6 +96,8 @@ $userid = $_GET['id'];
       </form>
   </div>
 </div>
+
+
 
     <script src="js/index.js"></script>
 
