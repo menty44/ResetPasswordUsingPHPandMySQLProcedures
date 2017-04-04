@@ -80,16 +80,15 @@ $userid = $_GET['id'];
 
 					<!--<?php echo $_POST["password"]; ?>-->
         <!--<input type="text" name="currentPassword" placeholder="Current Password" required="required" class="input-txt" id="currentPassword" />-->
-          <input type="password" name="password" placeholder="New Password" required="required" class="input-txt" id="txtNewPassword"/>
-          <input type="password" name="confirmPassword" placeholder="Confirm Password" required="required" class="input-txt" id="txtConfirmPassword" onkeyup="checkPasswordMatch();>
-      </div>/>
-
-      <div id="divCheckPasswordMatch">
+          <input type="password" name="password" placeholder="New Password" required="required" class="input-txt" id="password1"/>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" required="required" class="input-txt" id="password2" />
       </div>
-          <div class="login-footer">
-             <a href="#" class="lnk">
 
-            </a>
+      <p id="validate-status"></p>
+          <div class="login-footer">
+<!--             <a href="#" class="lnk">-->
+<!---->
+<!--            </a>-->
             <center><button type="submit" class="btn btn--right">CHANGE  </button></center>
 
           </div>
