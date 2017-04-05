@@ -43,17 +43,19 @@ $userid = $_GET['id'];
             var pass1 = document.getElementById("pass1").value;
             var pass2 = document.getElementById("pass2").value;
             var ok = true;
+            var notok = false;
             if (pass1 != pass2) {
                 //alert("Passwords Do not match");
                 document.getElementById("pass1").style.borderColor = "#E34234";
                 document.getElementById("pass2").style.borderColor = "#E34234";
                 ok = false;
-                alert("Passwords Match!!!").style.borderColor = "#1e90ff";
+                alert("Passwords MisMatch!!!").style.borderColor = "#1e90ff";
             }
             else {
                 //alert("Passwords Match!!!").style.borderColor = "#1e90ff";
             }
-            return ok;
+            //return ok;
+            return notok;
         }
         </script>
 
