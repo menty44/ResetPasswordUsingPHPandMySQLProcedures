@@ -40,22 +40,25 @@ $userid = $_GET['id'];
 
     <script type="text/javascript">
         function myFunction() {
+
             var pass1 = document.getElementById("pass1").value;
             var pass2 = document.getElementById("pass2").value;
             var ok = true;
             var notok = false;
-            if (pass1 != pass2) {
-                //alert("Passwords Do not match");
+
+            if (pass1 == pass2) {
+
                 document.getElementById("pass1").style.borderColor = "#E34234";
                 document.getElementById("pass2").style.borderColor = "#E34234";
-                ok = false;
-                alert("Passwords MisMatch!!!").style.borderColor = "#1e90ff";
+                ok = true;
+                //alert("Passwords Match!!!").style.borderColor = "#1e90ff";
             }
             else {
                 //alert("Passwords Match!!!").style.borderColor = "#1e90ff";
+                alert("Passwords Do not match");
+                return notok;
             }
-            //return ok;
-            return notok;
+            return ok;
         }
         </script>
 
