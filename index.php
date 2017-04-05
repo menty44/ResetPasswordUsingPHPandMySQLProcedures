@@ -27,7 +27,7 @@ $userid = $_GET['id'];
 
 
 ?>
-
+<?php  echo '<strong><h1 class="login-heading"><center><font color="yellow">'.$_POST[$umoja].'</font></center></h1></strong>'; ?>
 <html >
 <head>
   <meta charset="UTF-8">

@@ -42,7 +42,7 @@ if($stmt->execute()){
         //echo '<html ><head><meta charset="UTF-8"><title>Simple login form</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"><link rel="stylesheet" href="css/style.css"></head><body></br></br></br></br></br></br></br></br></br></br><div class="container"><div class="login"><h1 class="login-heading"><center><strong><h1 class="login-heading"><center><font color="dodgerblue">'.$umoja.'</font></center></h1></strong></center></h1></div></div><script src="js/index.js"></script></body></html>';
         echo '<strong><h1 class="login-heading"><center><font color="yellow">'.$umoja.'</font></center></h1></strong>';
         header('Location: http://localhost/ResetPasswordUsingPHPandMySQLProcedures/?id='.$_GET["id"]);
-        //echo '<strong><h1 class="login-heading"><center><font color="yellow">'.$umoja.'</font></center></h1></strong>';
+        echo '<script type="text/javascript"> alert("Password Reset Successful"); </script>';
 
 
         die();
