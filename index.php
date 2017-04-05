@@ -48,9 +48,10 @@ $userid = $_GET['id'];
                 document.getElementById("pass1").style.borderColor = "#E34234";
                 document.getElementById("pass2").style.borderColor = "#E34234";
                 ok = false;
+                alert("Passwords Match!!!").style.borderColor = "#1e90ff";
             }
             else {
-                alert("Passwords Match!!!").style.borderColor = "#1e90ff";
+                //alert("Passwords Match!!!").style.borderColor = "#1e90ff";
             }
             return ok;
         }
