@@ -39,7 +39,9 @@ if($stmt->execute()){
         // access message $book object
 
         $umoja = $fredshome->message;
-        echo '<h1 class="login-heading"><center><font color="dodgerblue">'.$umoja.'</font></center></h1>';
+        //echo '<html ><head><meta charset="UTF-8"><title>Simple login form</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"><link rel="stylesheet" href="css/style.css"></head><body></br></br></br></br></br></br></br></br></br></br><div class="container"><div class="login"><h1 class="login-heading"><center><strong><h1 class="login-heading"><center><font color="dodgerblue">'.$umoja.'</font></center></h1></strong></center></h1></div></div><script src="js/index.js"></script></body></html>';
+        header("Location: http://localhost/ResetPasswordUsingPHPandMySQLProcedures/");
+        die();
 
 
     }else{
